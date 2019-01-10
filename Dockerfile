@@ -40,7 +40,8 @@ RUN \
 	mesa-dev \
 	openal-soft-dev \
 	python-dev \
-	sqlite-dev && \
+	sqlite-dev \
+	postgresql-dev && \
  apk add --no-cache --virtual=build-dependencies \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	leveldb-dev && \
@@ -94,6 +95,7 @@ RUN \
 	-DENABLE_LEVELDB=1 \
 	-DENABLE_LUAJIT=1 \
 	-DENABLE_REDIS=1 \
+	-DENABLE_POSTGRESQL=1 \
 	-DENABLE_SOUND=0 \
 	-DENABLE_SYSTEM_GMP=1 \
 	-DRUN_IN_PLACE=0 && \
