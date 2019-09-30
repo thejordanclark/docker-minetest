@@ -2,4 +2,4 @@
 
 exec \
 	s6-setuidgid abc minetestserver ${CLI_ARGS} \
-	--config /config/.minetest/main-config/minetest.conf --port 30000
+	--config /config/.minetest/main-config/minetest.conf
