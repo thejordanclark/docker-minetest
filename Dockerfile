@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.9
+FROM lsiobase/alpine:3.11
 
 # set version label
 ARG BUILD_DATE
@@ -42,7 +42,7 @@ RUN \
 	python-dev \
 	sqlite-dev \
 	postgresql-dev && \
- apk add --no-cache --virtual=build-dependencies \
+ apk add --no-cache --virtual=build-dependencies-2 \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	leveldb-dev && \
  echo "**** install runtime packages ****" && \
@@ -124,6 +124,8 @@ RUN \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
+ apk del --purge \
+	build-dependencies-2 && \
  rm -rf \
 	/tmp/*
 
